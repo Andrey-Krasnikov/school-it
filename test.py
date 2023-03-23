@@ -168,6 +168,6 @@ class Test:
 
     def writeIn(self):
         #зробимо функцію, куди будуть кидатися результати студентів. це допоможе уникнути "підбору" правильного варінту, та зробить легшим процесс оцінювання.
-        with open("results.txt", "w") as f:
-            print(f"Студент: {self.student} ; Оцінка за тест: {self.result} \n", file=f)
+        with open("results.txt", "a") as f:
+            f.write(f"Студент: {self.student} ; Оцінка за тест: {self.result} \n")
 Start = Test("Krasnikov")
