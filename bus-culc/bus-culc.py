@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import *
 
 window = tk.Tk()
 window.title("Автобусні рейси")
@@ -16,7 +17,13 @@ window.count.place(x=570, y=30)
 
 #body
 
+window.auto1 = Canvas(width="200", height="150")
+window.auto1.place(x=166, y= 100)
+img1 = PhotoImage(file="av1.png")
+window.auto1.create_image(100,75,image=img1)
 
+window.auto2 = Canvas(width="200", height="150")
+window.auto2.place(x=566, y= 100)
 
 
 window.mainloop()
