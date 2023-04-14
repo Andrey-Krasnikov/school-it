@@ -134,8 +134,4 @@ e_calculate.place(x=508, y=600)
 total = Label(text="0 ГРН", font=("Gotham pro", 17), bg=stbg, fg="white")
 total.place(x=595, y=660)
 
-
-
-
-
 window.mainloop()
