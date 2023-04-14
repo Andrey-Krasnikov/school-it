@@ -1,5 +1,4 @@
 from tkinter import *
-from tkinter import Radiobutton
 
 window = Tk()
 window.title("Ціни на паливо")
@@ -16,8 +15,6 @@ gaz_price = 18.9
 img = PhotoImage(file="fuelprice_imgs/azs_kvorum.png")
 
 stbg = "#2c3e50"
-
-
 
 companylable = Label(text=f"Компанія: {company}", font=("Gotham pro", 22), bg=stbg, fg="white")
 companylable.place(x=500, y=20)
@@ -73,7 +70,6 @@ def on_select(value):
     azs_pc.create_image(0, 0, anchor=NW, image=img)
     company = value
     companylable.configure(text=f"Компанія: {company}", font=("Gotham pro", 22), bg=stbg, fg="white")
-
 
 
 azc = OptionMenu(window, selected, *azc_list, command=on_select)
