@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 window = Tk()
 window.title("Ціни на паливо")
@@ -108,21 +109,24 @@ discount_menu.place(x=355, y=460)
 
 def count():
     global dp_price, a92_price, a95_price, gaz_price
-    full_amount = float(e_amount.get())
-    fuel_type = fuel.get()
-    if fuel_type == 1:
-        fuel_price = dp_price
-    elif fuel_type == 2:
-        fuel_price = a92_price
-    elif fuel_type == 3:
-        fuel_price = a95_price
-    elif fuel_type == 4:
-        fuel_price = gaz_price
-    discount1 = int(discount.get().strip("%"))
-    discount2 = 1 - discount1 / 100
-    totalprice = full_amount * fuel_price * discount2
-    totalprice = round(totalprice, 2)
-    total.configure(text=f"{totalprice} ГРН", font=("Gotham pro", 17), bg=stbg, fg="white")
+    if len(e_amount.get()) > 0 and e_amount.get().isdigit() and fuel.get() != None and len(discount.get()) > 0:
+        full_amount = float(e_amount.get())
+        fuel_type = fuel.get()
+        if fuel_type == 1:
+            fuel_price = dp_price
+        elif fuel_type == 2:
+             fuel_price = a92_price
+        elif fuel_type == 3:
+            fuel_price = a95_price
+        elif fuel_type == 4:
+            fuel_price = gaz_price
+        discount1 = int(discount.get().strip("%"))
+        discount2 = 1 - discount1 / 100
+        totalprice = full_amount * fuel_price * discount2
+        totalprice = round(totalprice, 2)
+        total.configure(text=f"{totalprice} ГРН", font=("Gotham pro", 17), bg=stbg, fg="white")
+    else:
+        messagebox.showerror("Помилка!", "Заповніть дані для розрахунку")
 
 e_calculate = Button(text="Обчислити вартість", font=("Gotham pro", 17), bg=stbg, fg="white", command=count)
 e_calculate.place(x=508, y=600)
