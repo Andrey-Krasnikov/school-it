@@ -13,7 +13,7 @@ while True:
     print("////////// Щоб закінчити введення, натисніть крапку //////////")
 
 summ = sum(pricelist)
-avg = round(summ/len(pricelist))
+avg = round(summ/len(pricelist), 2)
 print(f"Середня вартість всіх книжок в магазині: {avg}\nВсі книжки разом коштують:{summ}\nСписок книжок, ціна яких вища за середню: \n")
 
 for i in range(len(booklist)):
