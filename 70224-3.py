@@ -13,9 +13,9 @@ while True:
     print("////////// Щоб закінчити введення, натисніть крапку //////////")
 
 summ = sum(pricelist)
-avg = summ/len(pricelist)
+avg = round(summ/len(pricelist))
 print(f"Середня вартість всіх книжок в магазині: {avg}\nВсі книжки разом коштують:{summ}\nСписок книжок, ціна яких вища за середню: \n")
 
 for i in range(len(booklist)):
     if pricelist[i] > avg:
-        print(f"№{i+1}: {booklist[i]} - {pricelist[i]}")
+        print(f"ін.{i+1}: {booklist[i]} - {pricelist[i]}")
