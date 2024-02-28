@@ -6,11 +6,11 @@ while True:
     n+=1
     book = input(f"Введіть назву книги #{n}: ")
     if book == ".":
-        "Список книг закритий."
+        print("Список книг закритий.")
         break
     booklist.append(book)
     pricelist.append(float(input(f"Введіть ціну книги #{n}: ")))
-    print("/////////////////////////////////")
+    print("////////// Щоб закінчити введення, натисніть крапку //////////")
 
 summ = sum(pricelist)
 avg = summ/len(pricelist)
