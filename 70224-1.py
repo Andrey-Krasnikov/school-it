@@ -1,10 +1,12 @@
+from random import randint
+
 count = int(input("Введіть к-кість чисел: "))
 list = []
 find = int(input("Введіть шукане у списку:"))
 res = 0
 
 for i in range(count):
-    num = int(input(f"Введіть число №{i+1}: "))
+    num = randint(0,100)
     if num > 100 or num < 1:
         print("Введено число, яке не відповідає умові")
         break
