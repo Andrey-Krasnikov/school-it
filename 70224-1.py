@@ -7,11 +7,7 @@ res = 0
 
 for i in range(count):
     num = randint(0,100)
-    if num > 100 or num < 1:
-        print("Введено число, яке не відповідає умові")
-        break
     list.append(num)
-
     if num==find:
         res+=1
 
