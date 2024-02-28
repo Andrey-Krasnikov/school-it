@@ -1,16 +1,21 @@
 from random import randint
 
 count = int(input("Введіть к-кість чисел: "))
-list = []
+sp = []
 t = int(input("Введіть число для вставки:"))
-res = 0
-
 for i in range(count):
-    num = randint(50,250)
-    list.append(num)
-print(f"Несортований список:{list}")
-sortid = list.sort()
+    num = randint(50, 250)
+    sp.append(num)
 
-for i in range(len(sortid)):
-    if sortid[i] >= t:
+print(f"Несортований список: {sp}")
 
+sp.sort()
+
+for i in range(len(sp)):
+    if sp[i] >= t:
+        sp.insert(i, t)
+        break
+else:
+    sp.append(t)  #якщо всі числа менше ніж т
+
+print(f"Список з корективами: {sp}")
